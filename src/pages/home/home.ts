@@ -18,7 +18,7 @@ export class HomePage {
   taxaLibra = 0;
 
   constructor(public navCtrl: NavController, public conversor: ConversorService) {
-    conversor.getCotacoes().then(cotacoes => {
+    conversor.getCotacoes().subscribe(cotacoes => {
       this.taxaDolar = cotacoes['USD'];
       this.taxaEuro  = cotacoes['EUR'];
       this.taxaLibra = cotacoes['GBP'];
